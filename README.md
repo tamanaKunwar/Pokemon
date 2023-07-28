@@ -94,7 +94,11 @@ To run the application, we have dockerized it for easy setup. Follow these steps
    > Go to folder which contains your docker file.
    ```
    docker build -t crawler:latest .
-   docker-compose up
+   docker-compose up -d
+   docker exec -it <container_id> bash 
+         - Please run below commands in bash :-
+              -python manage.py makemigartions
+              -python manage.py migrate
    ```
 
 4. Once the containers are up and running, you can access the APIs using the provided endpoints and methods.

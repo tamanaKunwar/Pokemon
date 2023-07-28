@@ -19,11 +19,3 @@ services:
     depends_on:
       - migration
       - db
-
-  migration:
-    image: ${CRAWLER_IMAGE_NAME:-crawler:latest}
-    command: python manage.py migrate --noinput
-    volumes:
-      - .:/code
-    depends_on:
-      - db
